@@ -1,43 +1,40 @@
 # Analizador de Ventas | Reto Semana 3
 
-Este programa agrupa todas las transacciones del mismo producto para calcular el total de unidades vendidas, el ingreso total y el precio promedio[cite: 2]. Los resultados se presentan ordenados de mayor a menor ingreso[cite: 2].
+Este programa agrupa todas las transacciones del mismo producto para calcular el total de unidades vendidas, el ingreso total y el precio promedio[cite: 2]. Los resultados se presentan ordenados de mayor a menor ingreso
 
 ## Instrucciones de Uso
 
 ### Requisitos Previos
-* Asegúrate de tener Python instalado[cite: 2].
-* Ejecutar los comandos desde la carpeta raíz del proyecto[cite: 2].
+* Asegúrate de tener Python instalado.
+* Ejecutar los comandos desde la carpeta raíz del proyecto.
 
 ### 1. Ejecución con archivo de entrada
-* **Linux / Mac:** `python main.py < tests/entrada.txt`[cite: 2]
-* **Windows (PowerShell):** `Get-Content "tests\entrada.txt" | python .\main.py`[cite: 2]
-* **Windows (CMD):** `type "tests\entrada.txt" | python main.py`[cite: 2]
+* **Linux / Mac:** `python main.py < tests/entrada.txt`
+* **Windows (PowerShell):** `Get-Content "tests\entrada.txt" | python .\main.py`
+* **Windows (CMD):** `type "tests\entrada.txt" | python main.py`
 
 ### 2. Ejecución manual
-Puedes escribir los datos directamente en la terminal, línea por línea, sin necesitar un archivo[cite: 2].
-* **Linux / Mac:** `python main.py`[cite: 2]
-* **Windows (PowerShell):** `python .\main.py`[cite: 2]
-
-**Flujo de ingreso de datos:**
-* Después de ejecutar el comando, escribe los datos de la cabecera: `fecha,producto,cantidad,precio_unitario` y presiona Enter[cite: 2].
-* Escribe cada transacción (ej. `2026-01-01,Laptop,2,15000.00`) y presiona Enter[cite: 2].
-* Cuando termines de ingresar todos los datos, presiona `Ctrl + D` en Linux / Mac, o `Ctrl + Z` y luego Enter en Windows[cite: 2].
+Puedes escribir los datos directamente en la terminal, línea por línea, sin necesitar un archivo.
+* **Linux / Mac:** `python main.py`
+* **Windows (PowerShell):** `python .\main.py`
+* Flujo de ingreso de datos:**
+* Después de ejecutar el comando, escribe los datos de la cabecera: `fecha,producto,cantidad,precio_unitario` y presiona Enter
+* Escribe cada transacción (ej. `2026-01-01,Laptop,2,15000.00`) y presiona Enter.
+* Cuando termines de ingresar todos los datos, presiona `Ctrl + D` en Linux / Mac, o `Ctrl + Z` y luego Enter en Windows
 
 ### 3. Guardar la salida en un archivo
-* **Linux / Mac:** `python main.py < tests/entrada.txt > tests/salida.txt`[cite: 2]
-* **Windows (PowerShell):** `Get-Content "tests\entrada.txt" | python .\main.py | Out-File -FilePath "tests\salida.txt" -Encoding utf8`[cite: 2]
-* **Windows (CMD):** `type "tests\entrada.txt" | python main.py > "tests\salida.txt"`[cite: 2]
-
+* **Linux / Mac:** `python main.py < tests/entrada.txt > tests/salida.txt`
+* **Windows (PowerShell):** `Get-Content "tests\entrada.txt" | python .\main.py | Out-File -FilePath "tests\salida.txt" -Encoding utf8`
+* **Windows (CMD):** `type "tests\entrada.txt" | python main.py > "tests\salida.txt"`
 ### 4. Generar datos de prueba
-* Para generar 100 registros sin errores: `python generar_entrada.py 100 | python main.py`[cite: 2]
-* Para generar 100 registros con 20% de errores: `python generar_entrada.py 100 20 | python main.py`[cite: 2]
+* Para generar 100 registros sin errores: `python generar_entrada.py 100 | python main.py`
+* Para generar 100 registros con 20% de errores: `python generar_entrada.py 100 20 | python main.py`
 
 ---
 
 ## Formato de Datos y Ejemplos
 
-La estructura requiere un encabezado específico seguido de las transacciones[cite: 2].
-
+La estructura requiere un encabezado específico seguido de las transacciones
 **Ejemplo de entrada (`entrada.txt`):**
 ```csv
 fecha,producto,cantidad,precio_unitario
@@ -65,11 +62,11 @@ Teclado,5,4000.00,800.00
 
 ## Lógica de Procesamiento
 
-* El programa toma todas las transacciones del archivo de entrada y las consolida por producto[cite: 2].
-* Las unidades se suman y el ingreso total se calcula multiplicando cada cantidad por su precio unitario[cite: 2].
-* El resultado se ordena de mayor a menor ingreso, colocando los productos más rentables al inicio[cite: 2].
-* Las líneas con datos inválidos como columnas faltantes o valores no numéricos se ignoran automáticamente, por lo que no afectan los cálculos ni aparecen en la salida[cite: 2].
-* El precio promedio no es el promedio simple de los precios, sino el ingreso total dividido entre las unidades vendidas[cite: 2]. Esto refleja el valor real promedio por unidad considerando todas las transacciones del producto[cite: 2].
+* El programa toma todas las transacciones del archivo de entrada y las consolida por producto
+* Las unidades se suman y el ingreso total se calcula multiplicando cada cantidad por su precio unitario[
+* El resultado se ordena de mayor a menor ingreso, colocando los productos más rentables al inicio[
+* Las líneas con datos inválidos como columnas faltantes o valores no numéricos se ignoran automáticamente, por lo que no afectan los cálculos ni aparecen en la salida
+* El precio promedio no es el promedio simple de los precios, sino el ingreso total dividido entre las unidades vendidas. Esto refleja el valor real promedio por unidad considerando todas las transacciones del producto
 
 ---
-**Desarrollado por:** Manuel Hernandez Rodriguez[cite: 2]
+**Desarrollado por:** Manuel Hernandez Rodriguez
